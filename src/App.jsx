@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./header";
+import Content from "./content";
 import search from "./assets/images/search.png";
 import arrow from "./assets/images/arrow.png";
 import arrowWhite from "./assets/images/arrow-white.png";
+import axios from "axios";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -21,7 +23,7 @@ function App() {
           backgroundColor: isDark ? "#202C36" : "#FAFAFA",
           color: isDark ? "white" : "#111517",
         }}
-        className="font-nunito-sans h-screen"
+        className="font-nunito-sans"
       >
         <Header isDark={isDark} handleToggle={handleToggle}></Header>
 
@@ -69,6 +71,7 @@ function App() {
             )}
           </div>
         </div>
+        <Content isDark={isDark}></Content>
       </div>
     </>
   );

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import moon from "./assets/images/moon.png";
 import moonDark from "./assets/images/moon-dark.png";
 
