@@ -57,7 +57,11 @@ function App() {
         {showCountry ? (
           <Country searchData={searchData} />
         ) : (
-          <Content isDark={isDark} />
+          <Content
+            isDark={isDark}
+            getSearchData={getSearchData}
+            setInputValue={setInputValue}
+          />
         )}
       </div>
     </>
