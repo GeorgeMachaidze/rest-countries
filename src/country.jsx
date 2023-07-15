@@ -7,8 +7,8 @@ function Country({ searchData, isDark }) {
   };
 
   return (
-    <div className="mr-[28px] ml-[28px] pb-[60px]">
-      <div>
+    <div className="mr-[28px] ml-[28px] pb-[60px] lg:flex h-screen">
+      <div className="lg: ml-[80px]">
         <button
           style={{ backgroundColor: isDark ? "#2B3844" : "#FAFAFA" }}
           onClick={handleClick}
@@ -19,15 +19,15 @@ function Country({ searchData, isDark }) {
         </button>
         <div>
           <img
-            className="rounded-[5px] mt-[64px]"
+            className="rounded-[5px] mt-[64px] lg:w-[559px] lg:h-[450px] lg:mt-[90px]"
             src={searchData && searchData[0]?.flags.png}
             alt=""
           />
         </div>
       </div>
-      <div>
-        <div className="mt-[40px]">
-          <h1 className="text-22px font-extrabold">
+      <div className="lg:ml-[120px] lg:mt-[200px] lg:flex lg:flex:wrap">
+        <div className="mt-[40px] lg:mt-0">
+          <h1 className="text-22px font-extrabold lg:text-[32px]">
             {searchData && searchData[0]?.name.common}
           </h1>
           {searchData[0].name.common.length > 0 && (
@@ -63,7 +63,7 @@ function Country({ searchData, isDark }) {
             </span>
           </h1>
         </div>
-        <div className="mt-[32px]">
+        <div className="mt-[32px] lg:ml-[140px] lg:mr-[82px]">
           <h1 className="text-[14px] mt-[16px] font-bold">
             Top Level Domain:{" "}
             <span className="font-light text-[12px]">
@@ -88,11 +88,11 @@ function Country({ searchData, isDark }) {
             ))}
           </h1>
         </div>
-        <div className="mt-[32px]">
+        <div className="mt-[32px] lg:mt-[-20%] lg:ml-[-550px] lg:flex lg:items-center">
           <h1 className="text-[16px] font-semibold leading-[24px]">
             Border Countries:
           </h1>
-          <div className="flex gap-[10px] mt-[16px] ">
+          <div className="flex gap-[10px] mt-[16px] lg:mt-0 lg:ml-[43px] ">
             {searchData[0].borders.map((country, index) => (
               <button
                 style={{ backgroundColor: isDark ? "#2B3844" : "#FAFAFA" }}

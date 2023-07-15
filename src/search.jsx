@@ -33,9 +33,9 @@ function SearchBar({
   };
 
   return (
-    <div className="flex flex-col gap-[40px] ml-[16px] mr-[16px]">
+    <div className="flex flex-col gap-[40px] ml-[16px] mr-[16px] lg:flex-row lg:justify-between">
       <div
-        className="input flex items-center shadow-md rounded-[5px] pt-[14px] pb-[14px] pl-[32px] gap-[32px] mt-[24px]"
+        className="input flex items-center shadow-md rounded-[5px] pt-[14px] pb-[14px] pl-[32px] gap-[32px] mt-[24px] lg:w-[480px] lg:ml-[80px] lg:mt-[48px]"
         style={{
           backgroundColor: isDark ? "#2B3844" : "#fff",
         }}
@@ -65,7 +65,7 @@ function SearchBar({
         </h1>
       )}
       <div
-        className="relative flex items-center w-[200px] gap-[62px] pt-[14px] pb-[14px] pl-[24px] shadow-md rounded-[5px] cursor-pointer"
+        className="relative flex items-center w-[200px] gap-[62px] pt-[14px] pb-[14px] pl-[24px] shadow-md rounded-[5px] cursor-pointer lg:mt-[48px] lg:mr-[80px] "
         style={{
           backgroundColor: isDark ? "#2B3844" : "#fff",
         }}

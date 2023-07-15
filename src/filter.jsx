@@ -24,7 +24,7 @@ function Filter({ region, isDark, setInputValue, getSearchData }) {
     getSearchData();
   };
   return (
-    <>
+    <div className="flex flex-col items-center gap-[25px] justify-center mt-[32px] pb-[65px] lg:flex-row lg:flex-wrap lg:gap-[60px] lg:mt-[48px]">
       {Object.keys(filterData).length > 0 ? (
         Object.keys(filterData).map((key) => {
           const item = filterData[key];
@@ -32,42 +32,37 @@ function Filter({ region, isDark, setInputValue, getSearchData }) {
           return (
             <div
               key={key}
-              className="flex flex-col items-center gap-[25px] justify-center mt-[32px] pb-[65px]"
+              onClick={handleClick(item && item.name.common)}
+              className="pb-[48px] rounded-[5px] shadow-md cursor-pointer lg:max-w-[264px]"
+              style={{ backgroundColor: isDark ? "#2B3844" : "#fff" }}
             >
-              <div
-                key={key}
-                onClick={handleClick(item && item.name.common)}
-                className="pb-[48px] rounded-[5px] shadow-md cursor-pointer"
-                style={{ backgroundColor: isDark ? "#2B3844" : "#fff" }}
-              >
-                <img
-                  className="w-[267px] h-[160px] rounded-[5px]"
-                  src={item && item.flags.png}
-                  alt="country image"
-                />
-                <div className="ml-[24px]">
-                  <h1 className="font-extrabold text-[18px] leading-[25px] mt-[24px] mb-[16px]">
-                    {item && item.name.common}
-                  </h1>
-                  <h1 className="text-[14px] font-semibold leading-[16px]">
-                    Population:{" "}
-                    <span className="text-[14px] font-light ">
-                      {item && item.population.toLocaleString("en-US")}
-                    </span>
-                  </h1>
-                  <h1 className="text-[14px] font-semibold leading-[16px] mt-[8px]">
-                    Region:{" "}
-                    <span className="text-[14px] font-light ">
-                      {item && item.region}
-                    </span>
-                  </h1>
-                  <h1 className="text-[14px] font-semibold leading-[16px] mt-[8px]">
-                    Capital:{" "}
-                    <span className="text-[14px] font-light ">
-                      {item && item.capital}
-                    </span>
-                  </h1>
-                </div>
+              <img
+                className="w-[267px] h-[160px] rounded-[5px]"
+                src={item && item.flags.png}
+                alt="country image"
+              />
+              <div className="ml-[24px]">
+                <h1 className="font-extrabold text-[18px] leading-[25px] mt-[24px] mb-[16px]">
+                  {item && item.name.common}
+                </h1>
+                <h1 className="text-[14px] font-semibold leading-[16px]">
+                  Population:{" "}
+                  <span className="text-[14px] font-light ">
+                    {item && item.population.toLocaleString("en-US")}
+                  </span>
+                </h1>
+                <h1 className="text-[14px] font-semibold leading-[16px] mt-[8px]">
+                  Region:{" "}
+                  <span className="text-[14px] font-light ">
+                    {item && item.region}
+                  </span>
+                </h1>
+                <h1 className="text-[14px] font-semibold leading-[16px] mt-[8px]">
+                  Capital:{" "}
+                  <span className="text-[14px] font-light ">
+                    {item && item.capital}
+                  </span>
+                </h1>
               </div>
             </div>
           );
@@ -75,7 +70,7 @@ function Filter({ region, isDark, setInputValue, getSearchData }) {
       ) : (
         <p>No data available.</p>
       )}
-    </>
+    </div>
   );
 }
 
