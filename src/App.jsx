@@ -4,6 +4,7 @@ import Header from "./header";
 import Content from "./content";
 import Country from "./country";
 import SearchBar from "./search";
+import Filter from "./filter";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -11,6 +12,7 @@ function App() {
   const [searchData, setSearchData] = useState("");
   const [showCountry, setShowCountry] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(true);
+  const [region, setRegion] = useState("");
 
   const handleToggle = () => {
     setIsDark(!isDark);
@@ -33,7 +35,6 @@ function App() {
       }
     }
   };
-
   return (
     <>
       <div
@@ -51,17 +52,31 @@ function App() {
             getSearchData={getSearchData}
             inputValue={inputValue}
             setInputValue={setInputValue}
+            region={region}
+            setRegion={setRegion}
           />
         )}
 
         {showCountry ? (
-          <Country searchData={searchData} />
+          <Country searchData={searchData} isDark={isDark} />
         ) : (
-          <Content
-            isDark={isDark}
-            getSearchData={getSearchData}
-            setInputValue={setInputValue}
-          />
+          <>
+            {!region && (
+              <Content
+                isDark={isDark}
+                getSearchData={getSearchData}
+                setInputValue={setInputValue}
+              />
+            )}
+            {region && (
+              <Filter
+                region={region}
+                isDark={isDark}
+                setInputValue={setInputValue}
+                getSearchData={getSearchData}
+              />
+            )}
+          </>
         )}
       </div>
     </>

@@ -1,18 +1,20 @@
 import backArrow from "./assets/images/back-arrow.svg";
+import backArrowWhite from "./assets/images/back-arrow-white.svg";
 
-function Country({ searchData }) {
+function Country({ searchData, isDark }) {
   const handleClick = () => {
     window.location.href = "/";
   };
 
   return (
-    <div className="mr-[28px] ml-[28px]">
+    <div className="mr-[28px] ml-[28px] pb-[60px]">
       <div>
         <button
+          style={{ backgroundColor: isDark ? "#2B3844" : "#FAFAFA" }}
           onClick={handleClick}
-          className="flex items-center gap-[8px] mt-[40px] bg-#FFF shadow-md pl-[24px] pr-[24px] pt-[6px] pb-[6px]"
+          className="flex items-center gap-[8px] mt-[40px]  shadow-md pl-[24px] pr-[24px] pt-[6px] pb-[6px] pointer"
         >
-          <img src={backArrow} alt="" />
+          <img src={isDark ? backArrowWhite : backArrow} alt="" />
           Back
         </button>
         <div>
@@ -85,6 +87,22 @@ function Country({ searchData }) {
               </span>
             ))}
           </h1>
+        </div>
+        <div className="mt-[32px]">
+          <h1 className="text-[16px] font-semibold leading-[24px]">
+            Border Countries:
+          </h1>
+          <div className="flex gap-[10px] mt-[16px] ">
+            {searchData[0].borders.map((country, index) => (
+              <button
+                style={{ backgroundColor: isDark ? "#2B3844" : "#FAFAFA" }}
+                className="text-[12px] rounded-2px shadow-md p-[3px]"
+                key={index}
+              >
+                {country}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>

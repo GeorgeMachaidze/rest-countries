@@ -23,10 +23,10 @@ function Content({ isDark, setInputValue, getSearchData }) {
 
   return (
     <div>
-      <div className="flex flex-col items-center gap-[25px] justify-center mt-[32px] pb-[65px] ">
+      <div className="flex flex-col items-center gap-[25px] justify-center mt-[32px] pb-[65px]  ">
         <div
           onClick={handleClick(data && data[227]?.name.common)}
-          className="pb-[48px] rounded-[5px] shadow-md"
+          className="pb-[48px] rounded-[5px] shadow-md cursor-pointer"
           style={{ backgroundColor: isDark ? "#2B3844" : "#fff" }}
         >
           <img
@@ -60,7 +60,7 @@ function Content({ isDark, setInputValue, getSearchData }) {
         </div>
         <div
           onClick={handleClick(data && data[224]?.name.common)}
-          className="pb-[48px] rounded-[5px] shadow-md"
+          className="pb-[48px] rounded-[5px] shadow-md cursor-pointer"
           style={{ backgroundColor: isDark ? "#2B3844" : "#fff" }}
         >
           <img
@@ -94,7 +94,7 @@ function Content({ isDark, setInputValue, getSearchData }) {
         </div>
         <div
           onClick={handleClick(data && data[64]?.name.common)}
-          className="pb-[48px] rounded-[5px] shadow-md"
+          className="pb-[48px] rounded-[5px] shadow-md cursor-pointer"
           style={{ backgroundColor: isDark ? "#2B3844" : "#fff" }}
         >
           <img
@@ -128,7 +128,7 @@ function Content({ isDark, setInputValue, getSearchData }) {
         </div>
         <div
           onClick={handleClick(data && data[94]?.name.common)}
-          className="pb-[48px] rounded-[5px] shadow-md"
+          className="pb-[48px] rounded-[5px] shadow-md cursor-pointer"
           style={{ backgroundColor: isDark ? "#2B3844" : "#fff" }}
         >
           <img
@@ -162,7 +162,7 @@ function Content({ isDark, setInputValue, getSearchData }) {
         </div>
         <div
           onClick={handleClick(data && data[35]?.name.common)}
-          className="pb-[48px] rounded-[5px] shadow-md"
+          className="pb-[48px] rounded-[5px] shadow-md cursor-pointer"
           style={{ backgroundColor: isDark ? "#2B3844" : "#fff" }}
         >
           <img
@@ -196,7 +196,7 @@ function Content({ isDark, setInputValue, getSearchData }) {
         </div>
         <div
           onClick={handleClick(data && data[193]?.name.common)}
-          className="pb-[48px] rounded-[5px] shadow-md"
+          className="pb-[48px] rounded-[5px] shadow-md cursor-pointer"
           style={{ backgroundColor: isDark ? "#2B3844" : "#fff" }}
         >
           <img
@@ -230,7 +230,7 @@ function Content({ isDark, setInputValue, getSearchData }) {
         </div>
         <div
           onClick={handleClick(data && data[232]?.name.common)}
-          className="pb-[48px] rounded-[5px] shadow-md"
+          className="pb-[48px] rounded-[5px] shadow-md cursor-pointer"
           style={{ backgroundColor: isDark ? "#2B3844" : "#fff" }}
         >
           <img
@@ -264,7 +264,7 @@ function Content({ isDark, setInputValue, getSearchData }) {
         </div>
         <div
           onClick={handleClick(data && data[187]?.name.common)}
-          className="pb-[48px] rounded-[5px] shadow-md"
+          className="pb-[48px] rounded-[5px] shadow-md cursor-pointer"
           style={{ backgroundColor: isDark ? "#2B3844" : "#fff" }}
         >
           <img

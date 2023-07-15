@@ -2,12 +2,18 @@ import moon from "./assets/images/moon.png";
 import moonDark from "./assets/images/moon-dark.png";
 
 function Header({ isDark, handleToggle }) {
+  const handleClick = () => {
+    window.location.href = "/";
+  };
   return (
     <div
       style={{ backgroundColor: isDark ? "#2B3844" : "#FAFAFA" }}
       className="pt-[30px] pl-[16px] pb-[30px] pr-[16px] flex justify-between shadow-md"
     >
-      <h1 className="text-[14px] font-extrabold leading-5 font-nunito-sans">
+      <h1
+        onClick={handleClick}
+        className="text-[14px] font-extrabold leading-5 font-nunito-sans cursor-pointer"
+      >
         Where in the world?
       </h1>
       <div className="flex justify-center items-center gap-[8px]">

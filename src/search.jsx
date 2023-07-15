@@ -3,7 +3,13 @@ import arrow from "./assets/images/arrow.png";
 import arrowWhite from "./assets/images/arrow-white.png";
 import { useState } from "react";
 
-function SearchBar({ isDark, getSearchData, inputValue, setInputValue }) {
+function SearchBar({
+  isDark,
+  getSearchData,
+  inputValue,
+  setInputValue,
+  setRegion,
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [empty, setEmpty] = useState(true);
 
@@ -25,6 +31,7 @@ function SearchBar({ isDark, getSearchData, inputValue, setInputValue }) {
       getSearchData();
     }
   };
+
   return (
     <div className="flex flex-col gap-[40px] ml-[16px] mr-[16px]">
       <div
@@ -33,7 +40,12 @@ function SearchBar({ isDark, getSearchData, inputValue, setInputValue }) {
           backgroundColor: isDark ? "#2B3844" : "#fff",
         }}
       >
-        <img src={search} alt="search icon" onClick={getSearchData} />
+        <img
+          src={search}
+          alt="search icon"
+          onClick={getSearchData}
+          className="cursor-pointer"
+        />
         <input
           value={inputValue}
           onChange={handleInputChange}
@@ -53,7 +65,7 @@ function SearchBar({ isDark, getSearchData, inputValue, setInputValue }) {
         </h1>
       )}
       <div
-        className="relative flex items-center w-[200px] gap-[62px] pt-[14px] pb-[14px] pl-[24px] shadow-md rounded-[5px]"
+        className="relative flex items-center w-[200px] gap-[62px] pt-[14px] pb-[14px] pl-[24px] shadow-md rounded-[5px] cursor-pointer"
         style={{
           backgroundColor: isDark ? "#2B3844" : "#fff",
         }}
@@ -68,10 +80,30 @@ function SearchBar({ isDark, getSearchData, inputValue, setInputValue }) {
             }}
             className="absolute top-[50px] left-0 w-[200px] shadow-md rounded-[5px] pt-[16px] pb-[16px] pl-[24px] flex flex-col items-start gap-[8px]"
           >
-            <button className="leading-[16px] text-[12px]">Africa</button>
-            <button className="leading-[16px] text-[12px]">America</button>
-            <button className="leading-[16px] text-[12px]">Asia</button>
-            <button className="leading-[16px] text-[12px]">Oceania</button>
+            <button
+              className="leading-[16px] text-[12px]"
+              onClick={() => setRegion("Africa")}
+            >
+              Africa
+            </button>
+            <button
+              className="leading-[16px] text-[12px]"
+              onClick={() => setRegion("America")}
+            >
+              America
+            </button>
+            <button
+              className="leading-[16px] text-[12px]"
+              onClick={() => setRegion("Asia")}
+            >
+              Asia
+            </button>
+            <button
+              className="leading-[16px] text-[12px]"
+              onClick={() => setRegion("Oceania")}
+            >
+              Oceania
+            </button>
           </div>
         )}
       </div>
