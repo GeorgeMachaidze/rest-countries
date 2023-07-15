@@ -7,8 +7,8 @@ function Country({ searchData, isDark }) {
   };
 
   return (
-    <div className="mr-[28px] ml-[28px] pb-[60px] lg:flex h-screen">
-      <div className="lg: ml-[80px]">
+    <div className="mr-[28px] ml-[28px] pb-[60px] lg:flex lg:h-screen">
+      <div className="lg:ml-[80px]">
         <button
           style={{ backgroundColor: isDark ? "#2B3844" : "#FAFAFA" }}
           onClick={handleClick}
